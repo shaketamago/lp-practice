@@ -4,13 +4,120 @@
     box-sizing: border-box;
 }
 
+/*ローディングアニメーション*/
+#loading {
+    position: fixed;
+    inset: 0;
+    background-color: #c0e9ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+#loading.loaded {
+    opacity: 0;
+
+}
+
+.dots {
+    display: flex;
+    gap: 12px;
+}
+
+.dot-1,.dot-2,.dot-3 {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-color: #5a5858;
+    border-radius: 50%;
+    animation: bounce 2s infinite ease;
+}
+
+.dot-2 {
+    animation-delay: 0.25s;
+}
+.dot-3 {
+    animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #5a5858;
+    animation: fade 2s infinite;
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+/*↑↑ここまで　ローディングアニメーション↑↑*/
+
+/*ウェイブアニメーション*/
+.wave-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        120deg,
+        #c4f3fc 0%,
+        #15bafc 50%,
+        #c4f3fc 100%
+    );
+
+    background-size: 200% 200%;
+    animation: waveMove 10s ease infinite;
+}
+
+@keyframes waveMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/*↑↑ここまで　ウェイブアニメーション↑↑*/
+
+/*フェイドインアニメーション*/
+.fade-in{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.fade-in.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+/*↑↑ここまで　フェイドインアニメーション↑↑*/
+
 .inner{
     width: 1100px;
     margin: 0 auto;
 }
 
 header{
-    background-color: #fff;
+    background-color: #e9e7e7;
     padding: 15px 0;
     
 }
@@ -66,10 +173,58 @@ header{
     margin-top: 30px;
 }
 
+/*白帯アニメーション*/
+.band {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    transform: translateX(-110%);
+    transition: transform 3s ease;
+    z-index: 2;
+}
+
+.band.show::before {
+    transform: translateX(110%);
+}
+
+.band span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2.5s ease 1s,
+                transform 2.5s ease 1s;
+    z-index: 1;
+}
+
+
+
+.band.show span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.band-delay.show::before {
+    transition-delay: 0.2s;
+}
+
+.band-delay.show span {
+    transition-delay: 1s;
+}
+
+/*↑↑ここまで　白帯アニメーション↑↑*/
+
 .news{
-    background-color: #e3f2fd;
+    background-color: rgba(227, 242, 253, 0);
     padding-top: 50px;
     text-align: center;
+    
 }
 
 .news-inner{
@@ -108,7 +263,7 @@ header{
 }
 
 .skills{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .skills-title{
@@ -126,12 +281,11 @@ header{
     width: 300px;
     height: 300px;
     margin-bottom: 100px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
+   
 
+}
 .skills-icon img:hover {
-    opacity: 1.0;
+    opacity: 0.8;
 }
 
 .skills-icon a:not(:nth-child(3n)){
@@ -143,7 +297,7 @@ header{
 }
 
 .plan{
-    background-color: #d0dfea;
+    background-color:rgba(255, 255, 255, 0.7);
     padding: 50px 0;
 }
 
@@ -207,7 +361,7 @@ td:last-child{
 }
 
 .sns{
-    background-color: #e3f2fd;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 200px 0;
     text-align: center;
 

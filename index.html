@@ -11,7 +11,18 @@
     <title>lp-practice</title>
   </head>
   <body>
+    <!--ローディングアニメーション-->
+    <div id="loading">
+      <div class="dots">
+          <div class="dot-1"></div>
+          <div class="dot-2"></div>
+          <div class="dot-3"></div>
+      </div>
+      <p class="loading-text">Loading...</p>
+    </div>
 
+    <div class="wave-bg"></div>
+    
     <header>
       <div class="inner">
        <nav>
@@ -29,20 +40,23 @@
       <section class="keyvisual">
         <div class="inner">
           <div class="key-title">
-            <h1>WEB PRODUCTION COMPANY</h1>
-            <p>DIRECTION,CONTENT MARKETING</p>
-
+            <h1 class="band">
+              <span>WEB PRODUCTION COMPANY</span>
+            </h1>
+            <p class="band band-delay">
+              <span>DIRECTION,CONTENT MARKETING</span>
+            </p>
           </div>
         </div>
       </section>
 
       <section class="news">
         <div class="inner  news-inner">
-          <div class="news-icon">
-            <img src="/images/news/news.png">
+          <div class="news-icon fade-in">
+            <img src="/images/news/news.png" class="fade-in">
           </div>
 
-          <div class="news-text">
+          <div class="news-text fade-in">
             <div class="section-title">
               <h2>NEWS</h2>
 
@@ -65,17 +79,17 @@
       </section>
       <section class="skills">
         <div class="inner">
-          <div class="section-title skills-title">
+          <div class="section-title skills-title fade-in">
             <h2>WE ARE SKILLS</h2>
           </div>
 
           <div class="skills-icon">
-            <a href="#"><img src="/images/icons/photo.png" alt="photo"></a>
-            <a href="#"><img src="/images/icons/flower.png" alt="flower"></a>
-            <a href="#"><img src="/images/icons/data.png" alt="data"></a>
-            <a href="#"><img src="/images/icons/location.png" alt="location"></a>
-            <a href="#"><img src="/images/icons/calender.png" alt="calender"></a>
-            <a href="#"><img src="/images/icons/security.png" alt="security"></a>
+            <a href="#"><img src="/images/icons/photo.png" alt="photo" class="fade-in"></a>
+            <a href="#"><img src="/images/icons/flower.png" alt="flower" class="fade-in"></a>
+            <a href="#"><img src="/images/icons/data.png" alt="data" class="fade-in"></a>
+            <a href="#"><img src="/images/icons/location.png" alt="location" class="fade-in"></a>
+            <a href="#"><img src="/images/icons/calender.png" alt="calender" class="fade-in"></a>
+            <a href="#"><img src="/images/icons/security.png" alt="security" class="fade-in"></a>
           </div>
 
         </div>
@@ -83,11 +97,11 @@
 
       <section class="plan">
         <div class="inner">
-          <div class="section-title plan-title">
+          <div class="section-title plan-title fade-in">
             <h2>SELECT PLAN</h2>
           </div>
 
-          <table>
+          <table class="fade-in">
             <thead>
               <tr>
                 <th>PLAN</th>
@@ -140,10 +154,10 @@
 
       <nav class="sns">
         <div class="inner">
-          <a href="#"><i class="fab fa-facebook-f sns-icon"></i></a>
-          <a href="#"><i class="fas fa-comment-dots sns-icon"></i></a>
-          <a href="#"><i class="fab fa-twitter sns-icon"></i></a>
-          <a href="#"><i class="fas fa-envelope sns-icon"></i></a>
+          <a href="#"><i class="fab fa-facebook-f sns-icon fade-in"></i></a>
+          <a href="#"><i class="fas fa-comment-dots sns-icon fade-in"></i></a>
+          <a href="#"><i class="fab fa-twitter sns-icon fade-in"></i></a>
+          <a href="#"><i class="fas fa-envelope sns-icon fade-in"></i></a>
         </div>
       </nav>
 
@@ -155,5 +169,6 @@
       </div>
     </footer>
 
+    <script src="js/main.js"></script>
   </body>
 </html>
